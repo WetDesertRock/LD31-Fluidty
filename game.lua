@@ -138,7 +138,8 @@ function Game:addEnemy()
   e:setTarget(tx,ty,30*30)
   e:initBody()
   self.entities:add(e)
-  self.spawnrate = self.spawnrate * 0.995
+  self.spawnrate = math.max(0.1,self.spawnrate * 0.995)
+  -- print(self.spawnrate,#self.entities.members)
 end
 
 function Game:draw()
@@ -218,7 +219,8 @@ function Game:keypressed(key,isrepeat)
     return
   end
   if self.gameover then
-    states.switchState(Game())
+    G = Game()
+    states.switchState(G)
   end
 end
 

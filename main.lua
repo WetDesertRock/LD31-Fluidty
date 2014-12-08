@@ -28,7 +28,7 @@ function love.load()
 
   local resw,resh = love.window.getDesktopDimensions( display )
   local report = {
-    version = 1.0,
+    version = 1.1,
     res = {resw,resh},
     os = love.system.getOS( ),
     snowmanlover = true,
