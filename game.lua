@@ -196,7 +196,8 @@ function Game:hurt()
     local report = {
       points = self.points,
       timer = self.timer,
-      spawnrate = self.spawnrate
+      spawnrate = self.spawnrate,
+      avgfps = 1/love.timer.getAverageDelta( )
     }
     statreporter.report("gameend",report,self.debug)
 
